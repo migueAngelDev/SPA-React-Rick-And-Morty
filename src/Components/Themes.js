@@ -1,0 +1,19 @@
+import { createGlobalStyle, GlobalStyleComponent } from "styled-components";
+
+export const DarkTheme = {
+  body: " #24282f",
+  fontColor: "#fff",
+  background: "#cd9b26",
+};
+
+export const LightTheme = {
+  body: " #f5f5f5",
+  fontColor: "#202329",
+  background: "transparent",
+};
+
+export const GlobalStyles = createGlobalStyle`
+body{ 
+  background-color:${(props) => props.theme.body}
+}
+`;
