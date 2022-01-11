@@ -10,12 +10,15 @@ export default function ApiAjax() {
 
       .then((users) => {
         const datas = users.results;
-
+        console.log(datas);
         datas.forEach((data) => {
           let rickMorty = {
             id: data.id,
             name: data.name,
             image: data.image,
+            species: data.species,
+            gender: data.gender,
+            status: data.status,
           };
           setRickAndMorty((rickAndMorty) => [...rickAndMorty, rickMorty]);
         });
@@ -27,7 +30,14 @@ export default function ApiAjax() {
         <h3>Cargando...</h3>
       ) : (
         rickAndMorty.map((el) => (
-          <RickFunction key={el.id} image={el.image} name={el.name} />
+          <RickFunction
+            key={el.id}
+            image={el.image}
+            name={el.name}
+            species={el.species}
+            status={el.status}
+            gender={el.gender}
+          />
         ))
       )}
     </>

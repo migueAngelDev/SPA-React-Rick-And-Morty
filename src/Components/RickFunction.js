@@ -1,17 +1,19 @@
 import {
   CardBody,
   CardFieldSet,
-  Cardh1,
+  CardA,
   CardImg,
   CardParagraph,
 } from "./CardApi";
-export default function RickFunction({ name, image }) {
+export default function RickFunction({ name, image, status, species, gender }) {
   return (
     <CardFieldSet>
       <CardImg src={image} alt={name} />
       <CardBody>
-        <Cardh1>{name}</Cardh1>
-        <CardParagraph>{name}</CardParagraph>
+        <CardA href="#">{name}</CardA>
+        <CardParagraph>Status: {status}</CardParagraph>
+        <CardParagraph>Species: {species}</CardParagraph>
+        <CardParagraph>Gender: {gender}</CardParagraph>
       </CardBody>
     </CardFieldSet>
   );
