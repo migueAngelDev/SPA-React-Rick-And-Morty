@@ -12,7 +12,6 @@ export default function ApiAjax() {
         const datas = users.results;
 
         datas.forEach((data) => {
-          //   console.log(data.name);
           let rickMorty = {
             id: data.id,
             name: data.name,
@@ -28,7 +27,7 @@ export default function ApiAjax() {
         <h3>Cargando...</h3>
       ) : (
         rickAndMorty.map((el) => (
-          <RickFunction key={el.id} name={el.name} image={el.image} />
+          <RickFunction key={el.id} image={el.image} name={el.name} />
         ))
       )}
     </>

@@ -1,9 +1,9 @@
-import "./App.css";
 import React, { useState } from "react";
 import ApiAjax from "./Components/ApiAjax";
 import { LightTheme, DarkTheme, GlobalStyles } from "./Components/Themes";
-import styled, { ThemeProvider } from "styled-components";
+import { ThemeProvider } from "styled-components";
 import { StyleApp } from "./Components/StyleApp";
+import { CardWrapper, Header } from "./Components/CardApi";
 
 // const StyleApp = styled.div`
 //   color: ${(props) => props.theme.fontColor};
@@ -19,9 +19,13 @@ function App() {
   return (
     <ThemeProvider theme={theme === true ? LightTheme : DarkTheme}>
       <GlobalStyles />
-      <StyleApp>
+      <Header>
         <button onClick={() => ThemeToggler()}>Mode Dark</button>
-        <ApiAjax />
+      </Header>
+      <StyleApp>
+        <CardWrapper>
+          <ApiAjax />
+        </CardWrapper>
       </StyleApp>
     </ThemeProvider>
   );
