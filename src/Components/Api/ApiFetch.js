@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import RickFunction from "./RickFunction";
+import RickFunction from "./ApiFunction";
 
 export default function ApiAjax() {
   const [rickAndMorty, setRickAndMorty] = useState([]);
@@ -10,7 +10,6 @@ export default function ApiAjax() {
 
       .then((users) => {
         const datas = users.results;
-        console.log(datas);
         datas.forEach((data) => {
           let rickMorty = {
             id: data.id,
@@ -37,6 +36,7 @@ export default function ApiAjax() {
             species={el.species}
             status={el.status}
             gender={el.gender}
+            id={el.id}
           />
         ))
       )}
