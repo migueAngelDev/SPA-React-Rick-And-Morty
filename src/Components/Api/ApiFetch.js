@@ -2,7 +2,22 @@ import React, { useState, useEffect } from "react";
 import RickFunction from "./ApiFunction";
 
 export default function ApiAjax() {
+  // const [status, setStatus] = useState("initial");
   const [rickAndMorty, setRickAndMorty] = useState([]);
+  // const [data, setData] = useState([]);
+
+  // const query = async () => {
+  //   try {
+  //     let url =
+  //       "https://rickandmortyapi.com/api/character/?name=rick&status=unknown";
+  //     const queryResult = await fetch(url).then((res) => res.json());
+  //     setStatus("done");
+  //     setData(queryResult.results);
+  //   } catch (err) {
+  //     setStatus("Ocurrió un error");
+  //   }
+  // };
+
   useEffect(() => {
     let url = "https://rickandmortyapi.com/api/character";
     fetch(url)

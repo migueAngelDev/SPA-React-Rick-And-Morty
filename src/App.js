@@ -17,6 +17,12 @@ import {
   HeaderA,
   HeaderDiv,
   BtnImg,
+  ImgHome,
+  BtnHome,
+  WrapperFilter,
+  FieldSetFilter,
+  FilterInput,
+  IconSearch,
 } from "./Components/styles/CardAndStyles";
 
 function App() {
@@ -35,11 +41,23 @@ function App() {
             <HeaderA href="#">Rick And Morty API React</HeaderA>
           </HeaderDiv>
           <HeaderDiv>
+            <BtnHome href="/">
+              <ImgHome src="https://www.velky.store/wp-content/uploads/2020/05/home-button.png" />
+              Home
+            </BtnHome>
+          </HeaderDiv>
+          <HeaderDiv>
             <BtnTheme onClick={() => ThemeToggler()}>
               <BtnImg src="https://cdn-icons-png.flaticon.com/512/5262/5262027.png" />
             </BtnTheme>
           </HeaderDiv>
         </Header>
+        <WrapperFilter>
+          <FieldSetFilter>
+            <IconSearch src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" />
+            <FilterInput type="search" placeholder="Search..." />
+          </FieldSetFilter>
+        </WrapperFilter>
         <StyleApp>
           <Routes>
             <Route

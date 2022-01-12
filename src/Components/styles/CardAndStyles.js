@@ -4,12 +4,12 @@ import styled from "styled-components";
 
 export const Header = styled.header`
   height: 100px;
-  border-bottom: 1px solid #fff;
   position: sticky;
   background-color: #04111d;
   display: flex;
   justify-content: space-between;
   top: 0px;
+  border-bottom: 1px solid #fff;
 `;
 
 export const HeaderDiv = styled.div`
@@ -23,6 +23,45 @@ export const HeaderA = styled.a`
   &:hover {
     color: #9dff00;
   }
+`;
+/***************Filter**************/
+
+export const WrapperFilter = styled.div`
+  height: 3.5rem;
+  background-color: #04111d;
+  margin: 0;
+  border-bottom: 1px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const FieldSetFilter = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 0;
+  border: 2px solid #000;
+  background-color: #fff;
+  border-radius: 11px;
+`;
+
+export const FilterInput = styled.input`
+  border: 1px solid #fff;
+  padding: 0.7rem;
+  outline: none;
+  font-size: 0.8rem;
+  text-shadow: 0 0 1px black;
+  letter-spacing: 2px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+`;
+
+export const IconSearch = styled.img`
+  width: 2rem;
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
 `;
 
 /*******************Cards**********************/
@@ -76,8 +115,25 @@ export const BtnTheme = styled.button`
 `;
 
 export const BtnImg = styled.img`
-  width: 50px;
+  width: 40px;
   border-radius: 1rem;
+`;
+
+export const ImgHome = styled(BtnImg)`
+  border-radius: 0;
+  margin: 0 10px 0 0;
+`;
+
+export const BtnHome = styled.a`
+  cursor: pointer;
+  display: flex;
+  color: white;
+  text-decoration: none;
+  align-items: center;
+
+  &:hover {
+    color: #38ad24;
+  }
 `;
 
 /******************Footer******************/
