@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
 export const DarkTheme = {
@@ -18,4 +19,8 @@ export const GlobalStyles = createGlobalStyle`
 body{ 
   background-color:${(props) => props.theme.body}
 }
+`;
+
+export const StyleApp = styled.div`
+  color: ${(props) => props.theme.fontColor};
 `;

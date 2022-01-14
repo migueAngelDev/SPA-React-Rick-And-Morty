@@ -6,23 +6,18 @@ import {
   GlobalStyles,
 } from "./Components/styles/Themes";
 import { ThemeProvider } from "styled-components";
-import { StyleApp } from "./Components/styles/StyleApp";
+import { StyleApp } from "./Components/styles/Themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Character from "./Components/routes/Character";
 import FooterSection from "./Components/Footer/Footer";
+import BtnScroll from "./Components/Scroll/BtnScroll";
 import {
-  CardWrapper,
   BtnTheme,
   Header,
-  HeaderA,
   HeaderDiv,
   BtnImg,
   ImgHome,
   BtnHome,
-  WrapperFilter,
-  FieldSetFilter,
-  FilterInput,
-  IconSearch,
 } from "./Components/styles/CardAndStyles";
 
 function App() {
@@ -38,7 +33,7 @@ function App() {
         <GlobalStyles />
         <Header>
           <HeaderDiv>
-            <HeaderA href="#">Rick And Morty API React</HeaderA>
+            <BtnScroll />
           </HeaderDiv>
           <HeaderDiv>
             <BtnHome href="/">
@@ -52,22 +47,9 @@ function App() {
             </BtnTheme>
           </HeaderDiv>
         </Header>
-        <WrapperFilter>
-          <FieldSetFilter>
-            <IconSearch src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" />
-            <FilterInput type="search" placeholder="Search..." />
-          </FieldSetFilter>
-        </WrapperFilter>
         <StyleApp>
           <Routes>
-            <Route
-              path="/"
-              element={
-                <CardWrapper>
-                  <ApiAjax />
-                </CardWrapper>
-              }
-            />
+            <Route path="/" element={<ApiAjax />} />
             <Route path="/character/:id" element={<Character />} />
             <Route path="*" element={<div>404 - Not Found</div>} />
           </Routes>

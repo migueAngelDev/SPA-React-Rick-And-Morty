@@ -1,22 +1,17 @@
 import React, { useState, useEffect } from "react";
+import {
+  CardWrapper,
+  FieldSetFilter,
+  IconSearch,
+  SearchInput,
+  WrapperFilter,
+} from "../styles/CardAndStyles";
+import Loading from "../Loading/Loading";
 import RickFunction from "./ApiFunction";
 
 export default function ApiAjax() {
-  // const [status, setStatus] = useState("initial");
   const [rickAndMorty, setRickAndMorty] = useState([]);
-  // const [data, setData] = useState([]);
-
-  // const query = async () => {
-  //   try {
-  //     let url =
-  //       "https://rickandmortyapi.com/api/character/?name=rick&status=unknown";
-  //     const queryResult = await fetch(url).then((res) => res.json());
-  //     setStatus("done");
-  //     setData(queryResult.results);
-  //   } catch (err) {
-  //     setStatus("Ocurrió un error");
-  //   }
-  // };
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     let url = "https://rickandmortyapi.com/api/character";
@@ -40,21 +35,47 @@ export default function ApiAjax() {
   }, []);
   return (
     <>
-      {rickAndMorty.length === 0 ? (
-        <h3>Cargando...</h3>
-      ) : (
-        rickAndMorty.map((el) => (
-          <RickFunction
-            key={el.id}
-            image={el.image}
-            name={el.name}
-            species={el.species}
-            status={el.status}
-            gender={el.gender}
-            id={el.id}
-          />
-        ))
-      )}
+      <div>
+        <WrapperFilter>
+          <FieldSetFilter>
+            <IconSearch src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" />
+            <SearchInput
+              type="search"
+              placeholder="Search..."
+              onChange={(e) => {
+                setSearch(e.target.value);
+              }}
+            />
+          </FieldSetFilter>
+        </WrapperFilter>
+      </div>
+      <CardWrapper>
+        {rickAndMorty.length === 0 ? (
+          <Loading />
+        ) : (
+          rickAndMorty
+            .filter((val) => {
+              if (search === "") {
+                return val;
+              } else if (
+                val.name.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return val;
+              }
+            })
+            .map((el) => (
+              <RickFunction
+                key={el.id}
+                image={el.image}
+                name={el.name}
+                species={el.species}
+                status={el.status}
+                gender={el.gender}
+                id={el.id}
+              />
+            ))
+        )}
+      </CardWrapper>
     </>
   );
 }

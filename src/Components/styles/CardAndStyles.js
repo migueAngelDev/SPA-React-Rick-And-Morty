@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+/*************Loading****************/
+
+export const Container = styled.div`
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 /************Header***************/
 
 export const Header = styled.header`
@@ -16,8 +25,9 @@ export const HeaderDiv = styled.div`
   margin: 20px;
 `;
 
-export const HeaderA = styled.a`
+export const BtnHeader = styled.a`
   color: #39ff18;
+  cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
   &:hover {
@@ -45,10 +55,11 @@ export const FieldSetFilter = styled.div`
   border-radius: 11px;
 `;
 
-export const FilterInput = styled.input`
+export const SearchInput = styled.input`
   border: 1px solid #fff;
   padding: 0.7rem;
   outline: none;
+  width: 300px;
   font-size: 0.8rem;
   text-shadow: 0 0 1px black;
   letter-spacing: 2px;
@@ -150,17 +161,19 @@ export const FooterA = styled.a`
   }
 `;
 
-export const BtnFooter = styled.button`
-  color: white;
-  background-color: #995a5a;
+export const BtnFooter = styled.a`
+  color: #000;
+  background-color: #47631b;
   cursor: pointer;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   border: none;
-  padding: 15px 10px;
+  padding: 10px 10px;
   border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
 
   &:hover {
-    color: green;
+    background-color: #608d1a;
   }
 `;
 
@@ -169,12 +182,15 @@ export const ParagraphFooter = styled.p`
   font-size: 0.85rem;
 `;
 
+/**********Fi**********/
 export const Footer = styled.footer`
   border-top: 1px solid #fff;
   background-color: #04111d;
   height: 400px;
-  display: inherit;
-  text-align-last: center;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const FooterBody = styled.div`
