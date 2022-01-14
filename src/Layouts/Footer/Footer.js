@@ -6,7 +6,7 @@ import {
   Footer,
   FooterIcon,
   FooterBody,
-} from "../styles/CardAndStyles";
+} from "../../Assets/Styles/CardAndStyles";
 
 export default function FooterSection() {
   return (

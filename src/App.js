@@ -1,16 +1,12 @@
 import React, { useState } from "react";
-import ApiAjax from "./Components/Api/ApiFetch";
-import {
-  LightTheme,
-  DarkTheme,
-  GlobalStyles,
-} from "./Components/styles/Themes";
+import ApiAjax from "./Api/ApiFetch";
+import { LightTheme, DarkTheme, GlobalStyles } from "./Assets/Styles/Themes";
 import { ThemeProvider } from "styled-components";
-import { StyleApp } from "./Components/styles/Themes";
+import { StyleApp } from "./Assets/Styles/Themes";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Character from "./Components/routes/Character";
-import FooterSection from "./Components/Footer/Footer";
-import BtnScroll from "./Components/Scroll/BtnScroll";
+import FooterSection from "./Layouts/Footer/Footer";
+import BtnScroll from "./Components/utilities/Scroll /BtnScroll";
+import Character from "./Router/routes/Character";
 import {
   BtnTheme,
   Header,
@@ -18,7 +14,8 @@ import {
   BtnImg,
   ImgHome,
   BtnHome,
-} from "./Components/styles/CardAndStyles";
+  NotFound,
+} from "./Assets/Styles/CardAndStyles";
 
 function App() {
   const [theme, setTheme] = useState(true);
@@ -51,7 +48,14 @@ function App() {
           <Routes>
             <Route path="/" element={<ApiAjax />} />
             <Route path="/character/:id" element={<Character />} />
-            <Route path="*" element={<div>404 - Not Found</div>} />
+            <Route
+              path="*"
+              element={
+                <NotFound>
+                  <h3>Error 404 - Not Found :(</h3>
+                </NotFound>
+              }
+            />
           </Routes>
           <FooterSection />
         </StyleApp>

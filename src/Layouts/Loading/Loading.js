@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "../styles/CardAndStyles";
+import { Container } from "../../Assets/Styles/CardAndStyles";
 
 export default function Loading() {
   return (

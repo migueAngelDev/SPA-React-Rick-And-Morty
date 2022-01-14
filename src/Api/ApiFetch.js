@@ -5,8 +5,8 @@ import {
   IconSearch,
   SearchInput,
   WrapperFilter,
-} from "../styles/CardAndStyles";
-import Loading from "../Loading/Loading";
+} from "../Assets/Styles/CardAndStyles";
+import Loading from "../Layouts/Loading/Loading";
 import RickFunction from "./ApiFunction";
 
 export default function ApiAjax() {

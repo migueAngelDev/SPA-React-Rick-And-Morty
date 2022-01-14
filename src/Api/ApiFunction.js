@@ -5,7 +5,7 @@ import {
   CardImg,
   CardParagraph,
   CardA,
-} from "../styles/CardAndStyles.js";
+} from "../Assets/Styles/CardAndStyles.js";
 
 export default function RickFunction({
   name,

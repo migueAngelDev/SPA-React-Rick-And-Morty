@@ -5,7 +5,7 @@ import {
   CharacterCardBody,
   CharacterCardParagraph,
   CharacterCardImg,
-} from "../styles/CardAndStyles.js";
+} from "../Assets/Styles/CardAndStyles.js";
 
 export default function RoutingFunction({
   name,

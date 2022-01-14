@@ -1,4 +1,4 @@
-import { BtnHeader } from "../styles/CardAndStyles";
+import { BtnHeader } from "../../../Assets/Styles/CardAndStyles";
 
 export default function BtnScroll() {
   document.addEventListener("click", (e) => {

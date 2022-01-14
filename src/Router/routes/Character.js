@@ -1,6 +1,5 @@
 import React from "react";
-import RoutingApi from "../Router/RoutingApi";
-
+import RoutingApi from "../RoutingApi";
 const Character = () => {
   return (
     <>

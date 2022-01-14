@@ -9,6 +9,13 @@ export const Container = styled.div`
   align-items: center;
 `;
 
+export const NotFound = styled.div`
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 /************Header***************/
 
 export const Header = styled.header`
