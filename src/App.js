@@ -1,64 +1,44 @@
 import React, { useState } from "react";
-import ApiAjax from "./Api/ApiFetch";
-import { LightTheme, DarkTheme, GlobalStyles } from "./Assets/Styles/Themes";
-import { ThemeProvider } from "styled-components";
-import { StyleApp } from "./Assets/Styles/Themes";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import FooterSection from "./Layouts/Footer/Footer";
-import BtnScroll from "./Components/utilities/Scroll /BtnScroll";
-import Character from "./Router/routes/Character";
 import {
-  BtnTheme,
-  Header,
-  HeaderDiv,
-  BtnImg,
-  ImgHome,
-  BtnHome,
-  NotFound,
-} from "./Assets/Styles/CardAndStyles";
+  LightTheme,
+  DarkTheme,
+  GlobalStyles,
+} from "./components/Themes/Themes";
+import { ThemeProvider } from "styled-components";
+import { StyleApp } from "./components/Themes/Themes";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Characters from "./components/api/Characters/Characters";
+import Character from "./components/api/Character/Character";
+import FooterSection from "./components/Molecules/Footer/FooterSection";
+import NotFound from "./components/Molecules/NotFound/Notfound";
+import Header from "./components/Molecules/Header/Header";
+import { BtnImg, BtnTheme } from "./components/Themes/BtnApp.Styles";
 
 function App() {
   const [theme, setTheme] = useState(true);
 
   const ThemeToggler = () => {
-    theme === false ? setTheme(true) : setTheme(false);
+    !theme ? setTheme(true) : setTheme(false);
   };
 
   return (
     <BrowserRouter>
-      <ThemeProvider theme={theme === true ? LightTheme : DarkTheme}>
+      <ThemeProvider theme={theme ? LightTheme : DarkTheme}>
         <GlobalStyles />
-        <Header>
-          <HeaderDiv>
-            <BtnScroll />
-          </HeaderDiv>
-          <HeaderDiv>
-            <BtnHome href="/">
-              <ImgHome src="https://www.velky.store/wp-content/uploads/2020/05/home-button.png" />
-              Home
-            </BtnHome>
-          </HeaderDiv>
-          <HeaderDiv>
-            <BtnTheme onClick={() => ThemeToggler()}>
-              <BtnImg src="https://cdn-icons-png.flaticon.com/512/5262/5262027.png" />
-            </BtnTheme>
-          </HeaderDiv>
-        </Header>
+        <Header />
+        {/* <div style={{ height: 100, backgroundColor: "#333" }}>
+          <BtnTheme onClick={ThemeToggler}>
+            <BtnImg src="https://icons-for-free.com/iconfiles/png/512/forecast+moon+sun+icon+weather+icon-1320196360010861658.png" />
+          </BtnTheme>
+        </div> */}
         <StyleApp>
           <Routes>
-            <Route path="/" element={<ApiAjax />} />
+            <Route path="/" element={<Characters />} />
             <Route path="/character/:id" element={<Character />} />
-            <Route
-              path="*"
-              element={
-                <NotFound>
-                  <h3>Error 404 - Not Found :(</h3>
-                </NotFound>
-              }
-            />
+            <Route path="*" element={<NotFound />} />
           </Routes>
-          <FooterSection />
         </StyleApp>
+        <FooterSection />
       </ThemeProvider>
     </BrowserRouter>
   );

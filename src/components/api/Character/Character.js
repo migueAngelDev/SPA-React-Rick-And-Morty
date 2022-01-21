@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import RoutingFunction from "./RoutingFunction";
+import Card from "../Card/Card";
 
-export default function RoutingApi() {
+export default function Character() {
   const { id } = useParams();
 
   const [rickAndMorty, setRickAndMorty] = React.useState([]);
@@ -21,7 +21,7 @@ export default function RoutingApi() {
       {rickAndMorty.length === 0 ? (
         <h3>Cargando...</h3>
       ) : (
-        <RoutingFunction
+        <Card
           image={rickAndMorty.image}
           name={rickAndMorty.name}
           species={rickAndMorty.species}

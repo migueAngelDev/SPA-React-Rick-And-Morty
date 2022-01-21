@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from "react";
-import {
-  CardWrapper,
-  FieldSetFilter,
-  IconSearch,
-  SearchInput,
-  WrapperFilter,
-} from "../Assets/Styles/CardAndStyles";
-import Loading from "../Layouts/Loading/Loading";
-import RickFunction from "./ApiFunction";
+import Filter from "../../Atoms/Filter/Filter";
+import Loading from "../../Molecules/Loading/Loading";
+import Cards from "../Cards/Cards";
+import { CardWrapper } from "./Characters.Styles";
 
-export default function ApiAjax() {
-  const [rickAndMorty, setRickAndMorty] = useState([]);
+export default function Characters() {
   const [search, setSearch] = useState("");
+  const handleOnValue = (e) => {
+    setSearch(e.target.value);
+  };
+  const [rickAndMorty, setRickAndMorty] = useState([]);
 
   useEffect(() => {
     let url = "https://rickandmortyapi.com/api/character";
@@ -35,20 +33,7 @@ export default function ApiAjax() {
   }, []);
   return (
     <>
-      <div>
-        <WrapperFilter>
-          <FieldSetFilter>
-            <IconSearch src="https://cdn0.iconfinder.com/data/icons/very-basic-2-android-l-lollipop-icon-pack/24/search-512.png" />
-            <SearchInput
-              type="search"
-              placeholder="Search..."
-              onChange={(e) => {
-                setSearch(e.target.value);
-              }}
-            />
-          </FieldSetFilter>
-        </WrapperFilter>
-      </div>
+      <Filter handleOnValue={handleOnValue} />
       <CardWrapper>
         {rickAndMorty.length === 0 ? (
           <Loading />
@@ -64,7 +49,7 @@ export default function ApiAjax() {
               }
             })
             .map((el) => (
-              <RickFunction
+              <Cards
                 key={el.id}
                 image={el.image}
                 name={el.name}
