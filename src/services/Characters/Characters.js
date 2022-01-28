@@ -3,7 +3,7 @@ import Filter from "../../components/atoms/Filter";
 import Loading from "../../components/molecules/Loading";
 import Cards from "../Cards";
 import { CardWrapper } from "./Characters.styles";
-
+import SearchNotFound from "../../components/Messages/searchNotFound";
 export default function Characters() {
   const [search, setSearch] = useState("");
   const handleOnValue = (e) => {
@@ -31,34 +31,35 @@ export default function Characters() {
         });
       });
   }, []);
+
+  const GetFilter = rickAndMorty.filter((val) => {
+    if (search === "") {
+      return val;
+    } else if (val.name.toLowerCase().includes(search.toLowerCase())) {
+      return val;
+    }
+  });
+  console.log(GetFilter);
   return (
     <>
       <Filter handleOnValue={handleOnValue} />
       <CardWrapper>
         {rickAndMorty.length === 0 ? (
           <Loading />
+        ) : GetFilter.length === 0 ? (
+          <SearchNotFound />
         ) : (
-          rickAndMorty
-            .filter((val) => {
-              if (search === "") {
-                return val;
-              } else if (
-                val.name.toLowerCase().includes(search.toLowerCase())
-              ) {
-                return val;
-              }
-            })
-            .map((el) => (
-              <Cards
-                key={el.id}
-                image={el.image}
-                name={el.name}
-                species={el.species}
-                status={el.status}
-                gender={el.gender}
-                id={el.id}
-              />
-            ))
+          GetFilter.map((el) => (
+            <Cards
+              key={el.id}
+              image={el.image}
+              name={el.name}
+              species={el.species}
+              status={el.status}
+              gender={el.gender}
+              id={el.id}
+            />
+          ))
         )}
       </CardWrapper>
     </>
