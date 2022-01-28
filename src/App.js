@@ -4,14 +4,14 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "./components/molecules/Footer";
 import Header from "./components/molecules/Header";
 import NotFound from "./components/molecules/NotFound";
-import { darkTheme, GlobalStyles, lightTheme, StyleApp } from "./themes/Themes";
+import { darkTheme, GlobalStyles, lightTheme, StyleApp } from "./theme/Theme";
 import Character from "./services/Character";
 import Characters from "./services/Characters";
 import { useTheme } from "./context/ThemeProvider";
 import {
   BtnImg,
   BtnTheme,
-} from "./components/atoms/Buttons/BtnTheme/BtnTheme.styles";
+} from "./components/atoms/Button/BtnTheme/BtnTheme.styles";
 function App() {
   const themeContext = useTheme();
 

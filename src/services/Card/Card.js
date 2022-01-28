@@ -1,5 +1,5 @@
 import React from "react";
-import { AnchorBtn } from "../../components/atoms/Buttons/Btns/Btns";
+import { AnchorBtn } from "../../components/atoms/Button/Btns/Btns";
 import {
   CardFieldSet,
   CardBody,

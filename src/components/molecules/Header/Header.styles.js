@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { DarkTheme, LightTheme } from "../../../themes/Themes";
+import { DarkTheme, LightTheme } from "../../../theme/Theme";
 
 export const ContainerHeader = styled.header`
   height: 80px;

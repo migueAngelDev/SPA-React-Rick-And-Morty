@@ -1,5 +1,5 @@
 import React from "react";
-import { AnchorBtn } from "../../atoms/Buttons/Btns/Btns";
+import { AnchorBtn } from "../../atoms/Button/Btns/Btns";
 
 import {
   Anchor,
