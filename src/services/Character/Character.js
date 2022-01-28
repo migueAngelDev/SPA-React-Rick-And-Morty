@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import Loading from "../../components/molecules/Loading";
 import Card from "../Card";
 
 export default function Character() {
@@ -19,7 +20,7 @@ export default function Character() {
   return (
     <>
       {rickAndMorty.length === 0 ? (
-        <h3>Cargando...</h3>
+        <Loading />
       ) : (
         <Card
           image={rickAndMorty.image}

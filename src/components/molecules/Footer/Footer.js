@@ -1,11 +1,12 @@
 import React from "react";
+import { AnchorBtn } from "../../atoms/Buttons/Btns/Btns";
+
 import {
   Anchor,
   Container,
   FooterContainer,
   Icon,
   Paragraph,
-  AnchorBtn,
 } from "./Footer.style";
 
 export default function FooterSection() {

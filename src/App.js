@@ -1,35 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-// import { BtnImg, BtnTheme } from "./components/themes/BtnApp.styles";
 import Footer from "./components/molecules/Footer";
 import Header from "./components/molecules/Header";
 import NotFound from "./components/molecules/NotFound";
-import Character from "./components/services/Character";
-import Characters from "./components/services/Characters";
+import { darkTheme, GlobalStyles, lightTheme, StyleApp } from "./themes/Themes";
+import Character from "./services/Character";
+import Characters from "./services/Characters";
+import { useTheme } from "./context/ThemeProvider";
 import {
-  DarkTheme,
-  GlobalStyles,
-  LightTheme,
-  StyleApp,
-} from "./components/themes/Themes";
+  BtnImg,
+  BtnTheme,
+} from "./components/atoms/Buttons/BtnTheme/BtnTheme.styles";
 function App() {
-  const [theme, setTheme] = useState(true);
+  const themeContext = useTheme();
 
-  const ThemeToggler = () => {
-    !theme ? setTheme(true) : setTheme(false);
+  const THEME_OPTIONS = {
+    light: lightTheme,
+    dark: darkTheme,
   };
 
   return (
-    <BrowserRouter>
-      <ThemeProvider theme={theme ? LightTheme : DarkTheme}>
-        <GlobalStyles />
-        <Header />
-        {/* <div style={{ height: 100, backgroundColor: "#333" }}>
-          <BtnTheme onClick={ThemeToggler}>
-            <BtnImg src="https://icons-for-free.com/iconfiles/png/512/forecast+moon+sun+icon+weather+icon-1320196360010861658.png" />
-          </BtnTheme>
-        </div> */}
+    <ThemeProvider theme={THEME_OPTIONS[themeContext.theme]}>
+      <GlobalStyles />
+      <BrowserRouter>
+        <Header onClick={themeContext.onToggleTheme} />
         <StyleApp>
           <Routes>
             <Route path="/" element={<Characters />} />
@@ -37,9 +32,16 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
         </StyleApp>
+        <BtnTheme onClick={themeContext.onToggleTheme}>
+          {!themeContext.isDarkTheme ? (
+            <BtnImg src="https://www.freeiconspng.com/uploads/moon-icon-32.png" />
+          ) : (
+            <BtnImg src="https://cdn-icons-png.flaticon.com/512/97/97199.png" />
+          )}
+        </BtnTheme>
         <Footer />
-      </ThemeProvider>
-    </BrowserRouter>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

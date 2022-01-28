@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const WrapperFilter = styled.div`
-  height: 6rem;
-  background-color: #15adcf;
+  height: 4rem;
+  background-color: #000;
   margin: 0;
   border-bottom: 1px solid #fff;
   display: flex;
@@ -21,7 +21,7 @@ export const FieldSetFilter = styled.div`
 
 export const SearchInput = styled.input`
   border: 1px solid #fff;
-  padding: 0.9rem;
+  padding: 0.5rem;
   outline: none;
   width: 400px;
   font-size: 1rem;

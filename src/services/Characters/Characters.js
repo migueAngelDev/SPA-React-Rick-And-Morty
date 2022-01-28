@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Filter from "../../atoms/Filter";
-import Loading from "../../molecules/Loading";
+import Filter from "../../components/atoms/Filter";
+import Loading from "../../components/molecules/Loading";
 import Cards from "../Cards";
 import { CardWrapper } from "./Characters.styles";
 

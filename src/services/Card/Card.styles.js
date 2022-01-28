@@ -4,7 +4,7 @@ export const CardFieldSet = styled.div`
   background-color: #202225;
   max-width: 450px;
   width: 90vw;
-  height: 750px;
+  height: 780px;
   min-height: 70vh;
   margin: 10px auto;
   border-radius: 10px;

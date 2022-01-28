@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import { DarkTheme, LightTheme } from "../../themes/Themes";
+import { DarkTheme, LightTheme } from "../../../themes/Themes";
 
 export const ContainerHeader = styled.header`
-  height: 100px;
+  height: 80px;
   position: sticky;
   background-color: ${(props) => props.theme.headerBackground};
   display: flex;
