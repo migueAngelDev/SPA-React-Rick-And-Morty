@@ -1,20 +1,21 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/molecules/Footer";
 import Header from "./components/molecules/Header";
-import NotFound from "./components/molecules/NotFound";
+import Characters from "./components/Characters";
+import Character from "./components/Character";
+import Footer from "./components/molecules/Footer";
+import NotFound from "./components/Messages/NotFound";
 import { darkTheme, GlobalStyles, lightTheme, StyleApp } from "./theme/Theme";
-import Character from "./services/Character";
-import Characters from "./services/Characters";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
 import { useTheme } from "./context/ThemeProvider";
 import {
   BtnImg,
   BtnTheme,
 } from "./components/atoms/Button/BtnTheme/BtnTheme.styles";
+import { IconMoon, IconSun } from "./assets/images/icons";
+
 function App() {
   const themeContext = useTheme();
-
   const THEME_OPTIONS = {
     light: lightTheme,
     dark: darkTheme,
@@ -34,9 +35,9 @@ function App() {
         </StyleApp>
         <BtnTheme onClick={themeContext.onToggleTheme}>
           {!themeContext.isDarkTheme ? (
-            <BtnImg src="https://www.freeiconspng.com/uploads/moon-icon-32.png" />
+            <BtnImg src={IconMoon} />
           ) : (
-            <BtnImg src="https://cdn-icons-png.flaticon.com/512/97/97199.png" />
+            <BtnImg src={IconSun} />
           )}
         </BtnTheme>
         <Footer />

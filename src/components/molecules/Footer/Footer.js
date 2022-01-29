@@ -1,6 +1,7 @@
 import React from "react";
+import { IconRick } from "../../../assets/images/icons/index";
 import { AnchorBtn } from "../../atoms/Button/Btns/Btns";
-
+import { dataFooter } from "../../../data";
 import {
   Anchor,
   Container,
@@ -15,20 +16,17 @@ export default function FooterSection() {
       <FooterContainer>
         <div>
           <Container>
-            <Icon src="https://cutewallpaper.org/21/rick-and-morty-silhouette/Details-about-Silhouette-Car-Sticker-Cartoon-Vinyl-LaptopWindowWall-Decal.jpg" />
+            <Icon src={IconRick} />
           </Container>
           <Container>
-            <AnchorBtn
-              target="_blank"
-              href="https://github.com/migueAngelDev/SPA-React-Rick-And-Morty"
-            >
+            <AnchorBtn target="_blank" href={dataFooter.project}>
               Repository
             </AnchorBtn>
           </Container>
           <Container>
             <Paragraph>
               by {""}
-              <Anchor target="_blank" href="https://github.com/migueAngelDev">
+              <Anchor target="_blank" href={dataFooter.repository}>
                 Miguel Ángel {""}
               </Anchor>
               2022

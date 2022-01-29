@@ -1,25 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../../components/molecules/Loading";
+import { dataApi } from "../../data/index";
+import Loading from "../Messages/Loading";
 import Card from "../Card";
 
 export default function Character() {
   const { id } = useParams();
 
-  const [rickAndMorty, setRickAndMorty] = React.useState([]);
-  React.useEffect(() => {
+  const [rickAndMorty, setRickAndMorty] = useState([]);
+  useEffect(() => {
     GetData();
   }, []);
 
   const GetData = async () => {
-    let url = "https://rickandmortyapi.com/api/character";
+    let url = dataApi.api;
     const datas = await fetch(`${url}/${id}`);
     const data = await datas.json();
     setRickAndMorty(data);
   };
+  const isEmpty = rickAndMorty.length === 0;
   return (
     <>
-      {rickAndMorty.length === 0 ? (
+      {isEmpty ? (
         <Loading />
       ) : (
         <Card
