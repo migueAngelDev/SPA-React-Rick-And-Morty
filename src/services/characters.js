@@ -1,4 +1,4 @@
-import { dataApi } from "../data/index";
+import { dataApi } from "../assets/data/index";
 
 export const getCharacters = async () => {
   let url = dataApi.api;

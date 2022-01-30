@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Filter from "../atoms/Filter";
-import Loading from "../../Messages/Loading";
-import SearchNotFound from "../../Messages/searchNotFound";
-import { getCharacters } from "../../services/characters";
-import Cards from "../Cards";
-import { CardWrapper } from "./Characters.styles";
+import Filter from "../../../components/atoms/Filter";
+import Loading from "../../../messages/Loading";
+import SearchNotFound from "../../../messages/searchNotFound";
+import { getCharacters } from "../../../services/characters";
+import MultipleCards from "../../../components/Cards/MultipleCards/MultipleCards";
+import { CardWrapper } from "./MultipleCharacters.styles";
 
-export default function Characters() {
+export default function MultiplesCharacters() {
   const [search, setSearch] = useState("");
   const [rickAndMorty, setRickAndMorty] = useState([]);
 
@@ -54,7 +54,7 @@ const GridCards = ({ rickAndMorty, search }) => {
   return (
     <CardWrapper>
       {charactersFiltered.map((el) => (
-        <Cards
+        <MultipleCards
           key={el.id}
           image={el.image}
           name={el.name}

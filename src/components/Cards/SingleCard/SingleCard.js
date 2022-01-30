@@ -1,15 +1,15 @@
 import React from "react";
-import { AnchorBtn } from "../atoms/Button/Btns/Btns";
-import SuggestionCards from "../Characters/SuggestionCards";
+import { AnchorBtn } from "../../atoms/Button/Btns/Btns";
+import SuggestionCards from "../../../container/SuggestionCards";
 import {
   CardFieldSet,
   CardBody,
   CardImg,
   CardP,
   CardParagraph,
-} from "./Card.styles";
+} from "./SingleCard.styles";
 
-export default function Card({
+export default function SingleCard({
   name,
   image,
   status,

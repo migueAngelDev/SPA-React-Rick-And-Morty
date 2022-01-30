@@ -1,7 +1,7 @@
 import React from "react";
 import { IconRick } from "../../../assets/images/icons/index";
 import { AnchorBtn } from "../../atoms/Button/Btns/Btns";
-import { dataFooter } from "../../../data";
+import { dataFooter } from "../../../assets/data";
 import {
   Anchor,
   Container,

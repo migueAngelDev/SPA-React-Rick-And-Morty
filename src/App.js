@@ -1,9 +1,9 @@
 import React from "react";
+import MultipleCharacters from "./container/Characters/MultipleCharacters";
+import SingleCharacter from "./container/Characters/SingleCharacter";
 import Header from "./components/molecules/Header";
-import Characters from "./components/Characters";
-import Character from "./components/Character";
 import Footer from "./components/molecules/Footer";
-import NotFound from "./Messages/NotFound";
+import NotFound from "./messages/NotFound";
 import { darkTheme, GlobalStyles, lightTheme, StyleApp } from "./theme/Theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
@@ -28,8 +28,8 @@ function App() {
         <Header onClick={themeContext.onToggleTheme} />
         <StyleApp>
           <Routes>
-            <Route path="/" element={<Characters />} />
-            <Route path="/character/:id" element={<Character />} />
+            <Route path="/" element={<MultipleCharacters />} />
+            <Route path="/character/:id" element={<SingleCharacter />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </StyleApp>

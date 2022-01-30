@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../../Messages/Loading";
-import Card from "../Card";
-import { getCharacter } from "../../services/characters";
+import Loading from "../../../messages/Loading";
+import SingleCard from "../../../components/Cards/SingleCard/SingleCard";
+import { getCharacter } from "../../../services/characters";
 
-export default function Character() {
+export default function SingleCharacter() {
   const { id } = useParams();
 
   const [rickAndMorty, setRickAndMorty] = useState([]);
@@ -23,7 +23,7 @@ export default function Character() {
       {isEmpty ? (
         <Loading />
       ) : (
-        <Card
+        <SingleCard
           image={rickAndMorty.image}
           name={rickAndMorty.name}
           species={rickAndMorty.species}

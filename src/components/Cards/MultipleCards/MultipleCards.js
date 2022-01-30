@@ -5,9 +5,16 @@ import {
   CardsFieldSet,
   CardsImg,
   CardsParagraph,
-} from "./Cards.styles";
+} from "./MultipleCards.styles";
 
-export default function Cards({ name, id, image, status, species, gender }) {
+export default function MultipleCards({
+  name,
+  id,
+  image,
+  status,
+  species,
+  gender,
+}) {
   return (
     <CardsFieldSet>
       <CardsImg src={image} alt={name} />

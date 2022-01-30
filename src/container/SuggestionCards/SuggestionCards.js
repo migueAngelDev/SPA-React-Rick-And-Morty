@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Loading from "../../Messages/Loading";
+import Loading from "../../messages/Loading";
 import { getCharacters } from "../../services/characters";
-import Cards from "../Cards";
-import { CardWrapper } from "./Characters.styles";
+import MultipleCards from "../../components/Cards/MultipleCards/MultipleCards";
+import { CardWrapper } from "../Characters/MultipleCharacters/MultipleCharacters.styles";
 
 export default function SuggestionsCards() {
   const [rickAndMorty, setRickAndMorty] = useState([]);
@@ -37,7 +37,7 @@ const GridCards = ({ rickAndMorty, search }) => {
   return (
     <CardWrapper>
       {TreeCards.map((el) => (
-        <Cards
+        <MultipleCards
           key={el.id}
           image={el.image}
           name={el.name}
