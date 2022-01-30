@@ -15,7 +15,7 @@ export default function Character() {
       setRickAndMorty(res);
     };
     getInitialState();
-  }, []);
+  }, [id]);
 
   const isEmpty = rickAndMorty.length === 0;
   return (
