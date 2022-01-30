@@ -4,14 +4,19 @@ export const CardFieldSet = styled.div`
   background-color: #202225;
   max-width: 450px;
   width: 90vw;
-  height: 780px;
+  height: 800px;
   min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px auto;
   border-radius: 10px;
+  margin-bottom: 10vh;
+  margin-top: 10vh;
+  text-align: center;
 `;
 export const CardBody = styled.div`
   margin: 10px 10px;
-  text-align-last: center;
 `;
 
 export const CardImg = styled.img`

@@ -1,5 +1,6 @@
 import React from "react";
 import { AnchorBtn } from "../atoms/Button/Btns/Btns";
+import SuggestionCards from "../Characters/SuggestionCards";
 import {
   CardFieldSet,
   CardBody,
@@ -37,6 +38,7 @@ export default function Card({
           <AnchorBtn href="/">Back</AnchorBtn>
         </CardBody>
       </CardFieldSet>
+      <SuggestionCards />
     </>
   );
 }
