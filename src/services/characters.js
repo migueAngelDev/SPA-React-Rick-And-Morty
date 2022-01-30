@@ -10,3 +10,14 @@ export const getCharacters = async () => {
 
   return response;
 };
+
+export const getCharacter = async (id) => {
+  try {
+    let url = dataApi.api;
+    const response = await fetch(`${url}/${id}`);
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log("getCharacter", err);
+  }
+};

@@ -1,23 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { dataApi } from "../../data/index";
 import Loading from "../Messages/Loading";
 import Card from "../Card";
+import { getCharacter } from "../../services/characters";
 
 export default function Character() {
   const { id } = useParams();
 
   const [rickAndMorty, setRickAndMorty] = useState([]);
+
   useEffect(() => {
-    GetData();
+    const getInitialState = async () => {
+      const res = await getCharacter(id);
+      setRickAndMorty(res);
+    };
+    getInitialState();
   }, []);
 
-  const GetData = async () => {
-    let url = dataApi.api;
-    const datas = await fetch(`${url}/${id}`);
-    const data = await datas.json();
-    setRickAndMorty(data);
-  };
   const isEmpty = rickAndMorty.length === 0;
   return (
     <>

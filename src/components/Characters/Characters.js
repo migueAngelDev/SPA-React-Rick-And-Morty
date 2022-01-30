@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Filter from "../atoms/Filter";
 import Loading from "../Messages/Loading";
 import SearchNotFound from "../Messages/searchNotFound";
-import { getCharacters } from "../../services/character";
+import { getCharacters } from "../../services/characters";
 import Cards from "../Cards";
 import { CardWrapper } from "./Characters.styles";
 

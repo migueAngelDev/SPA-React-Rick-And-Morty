@@ -21,20 +21,22 @@ export default function Card({
   episode,
 }) {
   return (
-    <CardFieldSet>
-      <CardBody>
-        <CardImg src={image} alt={name} />
-        <CardP>{name}</CardP>
-        <CardParagraph>Created: {created}</CardParagraph>
-        <CardParagraph>Number of episodes: {episode}</CardParagraph>
-        <CardParagraph>Gender: {gender}</CardParagraph>
-        <CardParagraph>Location: {location}</CardParagraph>
-        <CardParagraph>Origin: {origin}</CardParagraph>
-        <CardParagraph>Species: {species}</CardParagraph>
-        <CardParagraph>Status: {status}</CardParagraph>
-        <CardParagraph>Type: {type}</CardParagraph>
-        <AnchorBtn href="/">Back</AnchorBtn>
-      </CardBody>
-    </CardFieldSet>
+    <>
+      <CardFieldSet>
+        <CardBody>
+          <CardImg src={image} alt={name} />
+          <CardP>{name}</CardP>
+          <CardParagraph>Created: {created}</CardParagraph>
+          <CardParagraph>Number of episodes: {episode}</CardParagraph>
+          <CardParagraph>Gender: {gender}</CardParagraph>
+          <CardParagraph>Location: {location}</CardParagraph>
+          <CardParagraph>Origin: {origin}</CardParagraph>
+          <CardParagraph>Species: {species}</CardParagraph>
+          <CardParagraph>Status: {status}</CardParagraph>
+          <CardParagraph>Type: {type}</CardParagraph>
+          <AnchorBtn href="/">Back</AnchorBtn>
+        </CardBody>
+      </CardFieldSet>
+    </>
   );
 }
