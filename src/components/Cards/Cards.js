@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   CardsA,
   CardsBody,
@@ -12,7 +13,7 @@ export default function Cards({ name, id, image, status, species, gender }) {
     <CardsFieldSet>
       <CardsImg src={image} alt={name} />
       <CardsBody>
-        <CardsA href={`/character/${id}`}>{name}</CardsA>
+        <Link to={`/character/${id}`}>{name}</Link>
         <CardsParagraph>Status: {status}</CardsParagraph>
         <CardsParagraph>Species: {species}</CardsParagraph>
         <CardsParagraph>Gender: {gender}</CardsParagraph>

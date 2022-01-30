@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import Loading from "../Messages/Loading";
+import Loading from "../../Messages/Loading";
 import Card from "../Card";
 import { getCharacter } from "../../services/characters";
 

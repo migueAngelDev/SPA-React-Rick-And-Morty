@@ -3,7 +3,7 @@ import Header from "./components/molecules/Header";
 import Characters from "./components/Characters";
 import Character from "./components/Character";
 import Footer from "./components/molecules/Footer";
-import NotFound from "./components/Messages/NotFound";
+import NotFound from "./Messages/NotFound";
 import { darkTheme, GlobalStyles, lightTheme, StyleApp } from "./theme/Theme";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";

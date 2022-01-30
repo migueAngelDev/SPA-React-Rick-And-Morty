@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Loading from "../Messages/Loading";
+import Loading from "../../Messages/Loading";
 import { getCharacters } from "../../services/characters";
 import Cards from "../Cards";
 import { CardWrapper } from "./Characters.styles";
